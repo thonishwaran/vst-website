@@ -1,6 +1,16 @@
 {
   "inquiries": [
     {
+      "id": "INQ-3160",
+      "name": "Elena Rostova",
+      "email": "elena@enterpriseai.com",
+      "service": "AI Solutions",
+      "budget": ",000+",
+      "message": "We want to build an enterprise AI pipeline with document analysis.",
+      "status": "New",
+      "createdAt": "2026-08-01T02:57:51.718Z"
+    },
+    {
       "id": "INQ-5965",
       "name": "Thonishwaran L",
       "email": "thonish@vsttechsolutions.com",

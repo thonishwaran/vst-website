@@ -1,10 +1,63 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 const db = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Email Transporter Setup
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.ethereal.email',
+  port: process.env.SMTP_PORT || 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER || 'vst_demo_user',
+    pass: process.env.SMTP_PASS || 'vst_demo_pass'
+  }
+});
+
+async function sendEmailNotification(inquiry) {
+  const mailOptions = {
+    from: '"VST Tech Platform" <no-reply@vsttechsolutions.com>',
+    to: process.env.NOTIFICATION_EMAIL || inquiry.email,
+    subject: `🚀 New Project Inquiry [${inquiry.id}] - ${inquiry.name}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px; background: #0a0b0e; color: #fff; border-radius: 12px;">
+        <h2 style="color: #ffd700;">New Project Inquiry Received!</h2>
+        <p><strong>Tracking ID:</strong> ${inquiry.id}</p>
+        <hr style="border-color: rgba(255,215,0,0.3);" />
+        <p><strong>Client Name:</strong> ${inquiry.name}</p>
+        <p><strong>Client Email:</strong> ${inquiry.email}</p>
+        <p><strong>Service Domain:</strong> ${inquiry.service}</p>
+        <p><strong>Budget:</strong> ${inquiry.budget}</p>
+        <p><strong>Project Description:</strong></p>
+        <blockquote style="background: rgba(255,255,255,0.05); padding: 12px; border-left: 3px solid #ffd700;">
+          ${inquiry.message}
+        </blockquote>
+        <p style="font-size: 0.85rem; color: #94a3b8;">Sent automatically from VST Tech Solutions Platform</p>
+      </div>
+    `
+  };
+
+  try {
+    if (process.env.SMTP_USER) {
+      await transporter.sendMail(mailOptions);
+      console.log(`✉️ Email notification sent for inquiry ${inquiry.id}`);
+    } else {
+      console.log(`====================================================`);
+      console.log(`✉️ [NEW INQUIRY NOTIFICATION LOGGED]`);
+      console.log(`Ref ID: ${inquiry.id}`);
+      console.log(`Client: ${inquiry.name} (${inquiry.email})`);
+      console.log(`Service: ${inquiry.service} | Budget: ${inquiry.budget}`);
+      console.log(`Message: ${inquiry.message}`);
+      console.log(`====================================================`);
+    }
+  } catch (err) {
+    console.error('Error dispatching email notification:', err.message);
+  }
+}
 
 // Middlewares
 app.use(cors());
@@ -192,6 +245,7 @@ app.post('/api/contact', (req, res) => {
   }
 
   const newInquiry = db.addInquiry({ name, email, service, budget, message });
+  sendEmailNotification(newInquiry);
 
   res.status(201).json({
     success: true,

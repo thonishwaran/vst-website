@@ -7,12 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   fetchServices();
   fetchPortfolio();
-  fetchTestimonials();
   initAIChat();
-  initQuoteCalculator();
   initContactForm();
   initNewsletterForm();
-  initStatsCounter();
 });
 
 /* ----------------------------------------------------
