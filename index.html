@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VST Tech Solutions | High-Impact Web, Mobile & AI Solutions</title>
+  <meta name="description" content="VST Tech Solutions builds enterprise-grade Web Applications, Mobile Apps, and Custom AI Automations that scale business growth.">
+  <meta name="keywords" content="VST Tech, Web Development, App Development, AI Solutions, Software Engineering, SaaS, Artificial Intelligence">
+  
+  <!-- Favicon & Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Particle Animation Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">V</div>
+        <div class="logo-text">VST <span>Tech</span></div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#ai-demo">AI Demo</a></li>
+        <li><a href="#calculator">Estimate Project</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#testimonials">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="dot-pulse"></span> Next-Gen Software & AI Engineering
+        </div>
+        <h1>We Build Digital Products That <span class="gradient-text">Scale 🚀</span></h1>
+        <p>Empowering startups and high-growth enterprises with modern Web Platforms, iOS/Android Apps, and Autonomous AI Agents engineered for maximum performance.</p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <span>Launch Your Project</span> ➔
+          </a>
+          <a href="#calculator" class="btn btn-secondary">
+            <span>Calculate Cost</span> 🧮
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="icon">⚡</span> 100% Production Ready
+          </div>
+          <div class="trust-item">
+            <span class="icon">🔒</span> Enterprise-Grade Security
+          </div>
+          <div class="trust-item">
+            <span class="icon">🏆</span> 99.4% Client Satisfaction
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-preview">
+        <div class="hero-card-glass">
+          <div class="live-indicator">
+            <span class="dot-pulse"></span> Live VST Engineering Engine
+          </div>
+          <h3 style="font-family: var(--font-heading); margin-bottom: 12px;">Architecture Blueprint</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Real-time cloud infrastructure, automated CI/CD deployment, and intelligent LLM automation.</p>
+
+          <div style="background: rgba(0,0,0,0.5); padding: 16px; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.85rem; color: #a7f3d0; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px;">
+            > Initializing VST Tech Core...<br>
+            > Web Engine: Next.js + Node Express [ONLINE]<br>
+            > AI Pipeline: LLM Assistant Bot [READY]<br>
+            > Security Shield: SSL + AES-256 [ACTIVE]<br>
+            > Deploy Status: 100% Optimized
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted);">
+            <span>System Status: <strong style="color: var(--gold-primary);">Optimal</strong></span>
+            <span>Latency: <strong style="color: #10b981;">18ms</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Our Expertise</div>
+        <h2 class="section-title">Engineered For <span class="gradient-text">Excellence</span></h2>
+        <p class="section-subtitle">Comprehensive software development and artificial intelligence solutions tailored to accelerate your business roadmap.</p>
+      </div>
+
+      <div class="services-grid" id="services-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive AI Solutions Showcase -->
+  <section id="ai-demo">
+    <div class="container">
+      <div class="ai-demo-wrapper">
+        <div class="ai-info">
+          <div class="badge">Interactive AI Preview</div>
+          <h3>Try The VST Intelligent <span class="gradient-text">AI Assistant</span></h3>
+          <p>Experience how our custom AI integration automates client inquiries, qualifies leads, and provides instant 24/7 technical answers.</p>
+
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; color: var(--text-muted);">
+            <li>✔️ Instant NLP response engine backed by Express API</li>
+            <li>✔️ Custom domain-trained conversational models</li>
+            <li>✔️ Seamless CRM & Database integration capabilities</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary btn-sm">Build Custom AI Bot</a>
+        </div>
+
+        <div class="ai-chat-box">
+          <div class="chat-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.2rem;">🤖</span>
+              <div>
+                <strong style="font-size: 0.95rem;">VST AI Bot Assistant</strong>
+                <div style="font-size: 0.75rem; color: #10b981;">● Online & Ready</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg bot">
+              Hello! 👋 I am VST Tech's AI Assistant. Ask me about our Web, Mobile, or AI engineering services!
+            </div>
+          </div>
+
+          <form class="chat-input-area" id="ai-chat-form">
+            <input type="text" id="ai-chat-input" placeholder="Type a message (e.g. 'What services do you offer?')..." required autocomplete="off">
+            <button type="submit" class="btn btn-primary btn-sm">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Quote Calculator -->
+  <section id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Instant Estimation</div>
+        <h2 class="section-title">Project Cost <span class="gradient-text">Calculator</span></h2>
+        <p class="section-subtitle">Get a transparent estimate for your web, app, or AI project in seconds.</p>
+      </div>
+
+      <div class="calculator-box">
+        <form id="quote-calculator-form">
+          <div class="calc-steps">
+            <!-- Step 1 -->
+            <div class="calc-group">
+              <label>1. Service Domain</label>
+              <div class="calc-select">
+                <select id="calc-service">
+                  <option value="Web Engineering & SaaS">🌐 Web Engineering & SaaS</option>
+                  <option value="Native & Cross-Platform Mobile">📱 Mobile App (iOS / Android)</option>
+                  <option value="AI & Automation Ecosystems">🤖 AI & Automation Ecosystems</option>
+                  <option value="Cloud Infrastructure & DevOps">☁️ Cloud & DevOps Infrastructure</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="calc-group">
+              <label>2. Premium Features</label>
+              <div class="calc-checkbox-group">
+                <label class="calc-checkbox">
+                  <input type="checkbox" value="User Auth & RBAC" class="calc-addon" checked> User Auth & Permissions
+                </label>
+                <label class="calc-checkbox">
+                  <input type="checkbox" value="Payment Gateway (Stripe/PayPal)" class="calc-addon" checked> Payment Gateway Integration
+                </label>
+                <label class="calc-checkbox">
+                  <input type="checkbox" value="Custom AI Bot / Analytics" class="calc-addon"> Custom AI Chatbot / Analytics
+                </label>
+                <label class="calc-checkbox">
+                  <input type="checkbox" value="Mobile PWA / Offline Sync" class="calc-addon"> PWA & Offline Support
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="calc-group">
+              <label>3. Project Timeline</label>
+              <div class="calc-select">
+                <select id="calc-timeline">
+                  <option value="Standard (3-5 Weeks)" selected>Standard (3-5 Weeks)</option>
+                  <option value="Rush (1-2 Weeks)">Rush Delivery (1-2 Weeks)</option>
+                  <option value="Flexible (6+ Weeks)">Flexible Schedule (6+ Weeks)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <div style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Estimated Project Investment</div>
+            <div class="calc-price" id="calc-price-display">$3,800</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">*Final quote validated upon technical discovery sprint.</p>
+
+            <button type="button" id="btn-save-quote" class="btn btn-primary">
+              Request Official Proposal with this Quote
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio / Impact Showcase -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Case Studies</div>
+        <h2 class="section-title">Featured Work & <span class="gradient-text">Impact</span></h2>
+        <p class="section-subtitle">Explore selected client platforms designed, engineered, and scaled by VST Tech Solutions.</p>
+      </div>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web & SaaS</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="ai">AI Solutions</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Statistics Counter -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="150">0</div>
+          <div class="stat-label">Projects Completed 🚀</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Global Enterprise Clients 🌐</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number" data-target="99">0</div>
+          <div class="stat-label">Satisfaction Percentage ⭐️</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number" data-target="24">0</div>
+          <div class="stat-label">Hour Support Turnaround ⏱️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Client Endorsements</div>
+        <h2 class="section-title">What Partners <span class="gradient-text">Say</span></h2>
+        <p class="section-subtitle">Read feedback from executives and founders who trust VST Tech Solutions.</p>
+      </div>
+
+      <div class="testimonials-slider" id="testimonials-container">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Consultation Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Start A Conversation</div>
+        <h2 class="section-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+        <p class="section-subtitle">Have a new project or looking to upgrade your tech stack? Reach out to our engineering team.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info-card">
+          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 24px;">Get In Touch</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <strong>Headquarters</strong>
+              <div style="color: var(--text-muted); font-size: 0.9rem;">Global Digital Studio | Remote & On-Site</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div>
+              <strong>Email Inquiries</strong>
+              <div style="color: var(--text-muted); font-size: 0.9rem;">hello@vsttechsolutions.com</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">⚡</div>
+            <div>
+              <strong>Response Time</strong>
+              <div style="color: var(--text-muted); font-size: 0.9rem;">Under 2 hours during business hours</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px; padding: 20px; background: rgba(255, 215, 0, 0.05); border-radius: var(--radius-md); border: 1px solid rgba(255, 215, 0, 0.2);">
+            <strong style="color: var(--gold-primary);">🔒 Confidentiality Guaranteed</strong>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">We sign NDAs prior to any detailed software scoping discussions.</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-box">
+          <form id="main-contact-form">
+            <div class="form-group">
+              <label for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Work Email *</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="john@company.com" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label for="contact-service">Service Domain</label>
+                <select id="contact-service" class="form-control">
+                  <option value="Web Development">Web Development</option>
+                  <option value="App Development">App Development</option>
+                  <option value="AI Solutions">AI Solutions</option>
+                  <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-budget">Estimated Budget</label>
+                <select id="contact-budget" class="form-control">
+                  <option value="$2,500 - $5,000">$2,500 - $5,000</option>
+                  <option value="$5,000 - $10,000" selected>$5,000 - $10,000</option>
+                  <option value="$10,000+">$10,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Project Description *</label>
+              <textarea id="contact-message" class="form-control" placeholder="Tell us about your goals, features, and timeline requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Project Inquiry 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">V</div>
+            <div class="logo-text">VST <span>Tech</span></div>
+          </a>
+          <p>VST Tech Solutions is a premier digital engineering studio delivering state-of-the-art Web, Mobile, and AI products built to perform and scale.</p>
+        </div>
+
+        <div class="footer-links">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#ai-demo">AI Bot Demo</a></li>
+            <li><a href="#calculator">Quote Estimator</a></li>
+            <li><a href="#portfolio">Featured Work</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h5>Tech Insights Newsletter</h5>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Subscribe to receive engineering updates, AI trends, and architecture guides.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Enter your email..." required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 VST Tech Solutions. All Rights Reserved. Crafted with elegance and precision.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Client Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
